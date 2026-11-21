@@ -6,6 +6,7 @@ Photo mirror for the Macau 2-night/3-day Notion travel pages (Day 1–3, food gu
 - Total size: **47.4 MB**
 - Serving URL pattern: `https://cdn.jsdelivr.net/gh/ducky0986-byte/macau-trip-images@main/images/<file>`
 - Fallback URL pattern: `https://raw.githubusercontent.com/ducky0986-byte/macau-trip-images/main/images/<file>`
+- Notion pages reference the immutable commit pin `@12e26b7adea0096eef86a87ea0e7d0bcbad673fa` (`https://cdn.jsdelivr.net/gh/ducky0986-byte/macau-trip-images@12e26b7adea0096eef86a87ea0e7d0bcbad673fa/images/<file>`), which jsDelivr serves with `cache-control: immutable`.
 
 ## Licensing
 
