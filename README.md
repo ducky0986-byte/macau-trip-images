@@ -134,3 +134,10 @@ All photos are from Wikimedia Commons and remain under their original licenses (
 | 116 | `Wynn_Palace_02-3fb3bfce.jpg` | Doraemon.tvb | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Commons](https://commons.wikimedia.org/wiki/File:Wynn_Palace_02.jpg) |
 | 117 | `Wynn_Palace_Cotai_cable_car_over_Performance_Lake_with_hotel_facade_Ma-c65e547a.jpg` | Qrzzzz | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Wynn_Palace_Cotai,_cable_car_over_Performance_Lake_with_hotel_facade,_Macau,_August_2025.jpg) |
 | 118 | `thumbnail-6cf54b90.jpg` | Bita RmJohnson Liuosa | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:MC_%E6%BE%B3%E9%96%80_Macau_%E8%B7%AF%E6%B0%B9_Cotai_%E6%B0%B8%E5%88%A9%E7%9A%87%E5%AE%AE_Wynn_Palace_%E5%99%B4%E6%B0%B4%E6%B1%A0_%E5%AE%9A%E6%9C%9F%E8%A1%A8%E6%BC%94_water_pool_fountain_show_%E6%BE%B3%E9%96%80%E9%AB%94%E8%82%B2%E9%A4%A8%E5%A4%A7%E9%A6%AC%E8%B7%AF_Avenida_da_Nave_Desportiva_night_in_November_2023_R12S_04.jpg) |
+
+## Route maps (Day 1–3)
+
+`maps/day{1,2,3}_route.png` — 3200×2200 posters built from Google Maps tiles (`mt1.google.com`, `hl=ko`)
+with a numbered route overlay, direction arrows and a Korean legend (generated 2026-11-21).
+Map data © Google; place coordinates from Google Maps. Intermediate zooms were rendered offline,
+so the posters are static images, not live maps.
