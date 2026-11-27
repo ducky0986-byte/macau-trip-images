@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마카오 오디오 가이드 · Hyunsu</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; padding:16px 14px 60px; background:#0f1216; color:#e8eaed;
+         font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif; }
+  h1 { font-size:19px; margin:4px 0 2px; }
+  .sub { font-size:13px; color:#9aa3ad; margin-bottom:18px; line-height:1.5; }
+  h2 { font-size:15px; color:#7fd1ff; margin:26px 0 8px; border-bottom:1px solid #222a33; padding-bottom:6px; }
+  .t { background:#161b21; border:1px solid #222a33; border-radius:12px; padding:10px 12px; margin-bottom:10px; }
+  .n { font-size:14px; font-weight:600; }
+  .d { font-size:12px; color:#8b95a1; margin:2px 0 8px; }
+  audio { width:100%; height:34px; }
+  a.dl { font-size:12px; color:#7fd1ff; text-decoration:none; display:inline-block; margin-top:7px; }
+</style>
+</head>
+<body>
+<h1>🎧 마카오 오디오 가이드</h1>
+<div class="sub">Hyunsu 한국어 음성 · 31개 · 1시간 52분 · 현장에서 해당 장소 파일을 재생하세요.<br>
+각 파일의 <b>MP3 내려받기</b>를 누르면 폰에 저장됩니다. 재생은 아래 플레이어에서 바로.</div>
+<div id="list"></div>
+<script>
+const tracks = [
+ ["00","마카오 종합 개괄","5:34","출발 전·기내","00_마카오_종합_개괄.mp3"],
+ ["Day1 · 11/28(토) 반도 → 코타이","","","",""],
+ ["D1-01","세나도 광장","4:33","파도 무늬 바닥·리알 세나도","Day1_01_세나도광장.mp3"],
+ ["D1-02","성 도미니크 성당","4:33","제단 앞의 살인·첫 신문","Day1_02_성도미니크성당.mp3"],
+ ["D1-03","몬테 요새","3:51","1622 네덜란드 격퇴·전망","Day1_03_몬테요새.mp3"],
+ ["D1-04","그랜드 리스보아 팰리스","3:16","코타이 관문·셔틀 허브","Day1_04_그랜드리스보아팰리스.mp3"],
+ ["D1-05","윈 팰리스","4:05","분수쇼·무료 스카이캡","Day1_05_윈팰리스.mp3"],
+ ["D1-06","런더너","3:52","근위병 교대식 20:30","Day1_06_런더너.mp3"],
+ ["D1-07","파리지앵","2:54","에펠탑 조명·역방향 트리","Day1_07_파리지앵.mp3"],
+ ["D1-08","베네시안","3:33","인공 하늘·그랜드 캐널","Day1_08_베네시안.mp3"],
+ ["D1-09","갤럭시","4:10","포춘 다이아몬드","Day1_09_갤럭시.mp3"],
+ ["D1-10","MGM 코타이","3:03","LED 아트리움·모피어스","Day1_10_MGM코타이.mp3"],
+ ["Day2 · 11/29(일) 반도 남부 → 판다 → 댄싱 워터 → 야시장","","","",""],
+ ["D2-01","기아 요새·케이블카","3:58","1865 등대·91m 전망","Day2_01_기아요새케이블카.mp3"],
+ ["D2-02","아마 사원","4:01","‘마카오’ 이름의 기원","Day2_02_아마사원.mp3"],
+ ["D2-03","릴라우 광장","2:22","릴라우의 물","Day2_03_릴라우광장.mp3"],
+ ["D2-04","만다린 하우스","3:25","정관응·성세위언","Day2_04_만다린하우스.mp3"],
+ ["D2-05","성 로렌스 성당","2:47","항해의 수호성인","Day2_05_성로렌스성당.mp3"],
+ ["D2-06","성 어거스틴 광장","2:50","용수묘·대예수 행렬","Day2_06_성어거스틴광장.mp3"],
+ ["D2-07","마카오 대성당","3:14","총독 취임식의 성당","Day2_07_마카오대성당.mp3"],
+ ["D2-08","페냐 성당","3:16","선원들의 서약·바다 뷰","Day2_08_페냐성당.mp3"],
+ ["D2-09","마카오 타워 전망대","3:21","223m 전망·번지점프","Day2_09_마카오타워전망대.mp3"],
+ ["D2-10","콜로안 빌리지","3:39","마지막 어촌·로드 스토우즈","Day2_10_콜로안빌리지.mp3"],
+ ["D2-11","자이언트 판다 파빌리온","3:39","무료·마지막 입장 16:45","Day2_11_자이언트판다파빌리온.mp3"],
+ ["D2-12","시티 오브 드림즈·댄싱 워터","3:55","16:30 공연·좌석 팁","Day2_12_시티오브드림즈_댄싱워터.mp3"],
+ ["D2-13","마카오 푸드 페스티벌","4:31","현금 불가·카드 탭","Day2_13_마카오푸드페스티벌.mp3"],
+ ["Day3 · 11/30(월) 아침 → 성 바울 → 타이파 → 귀국","","","",""],
+ ["D3-01","성 바울 성당 유적","4:37","68계단·오층 파사드","Day3_01_성바울성당유적.mp3"],
+ ["D3-02","나차 사원","2:43","성당 옆 도교 사원","Day3_02_나차사원.mp3"],
+ ["D3-03","루 림 이옥 정원","3:24","쑤저우 기법·아침 태극권","Day3_03_루림이옥정원.mp3"],
+ ["D3-04","관음당","3:22","1844 왕샤조약","Day3_04_관음당.mp3"],
+ ["D3-05","그랜드 리스보아·스타 오브 스탠리 호","2:35","218.08캐럿","Day3_05_그랜드리스보아_스타오브스탠리호.mp3"],
+ ["D3-06","고이케이 베이커리","3:20","기념품·포장 요령","Day3_06_고이케이베이커리.mp3"],
+ ["D3-07","타이파 빌리지","4:23","세이 키 주빠빠오","Day3_07_타이파빌리지.mp3"]
+];
+const el = document.getElementById('list');
+for (const t of tracks) {
+  if (!t[1]) { const h = document.createElement('h2'); h.textContent = t[0]; el.appendChild(h); continue; }
+  const d = document.createElement('div'); d.className = 't';
+  const src = 'audio/' + encodeURIComponent(t[4]);
+  d.innerHTML = `<div class="n">${t[0]} · ${t[1]}</div><div class="d">${t[2]} · ${t[3]}</div>
+    <audio controls preload="none" src="${src}"></audio>
+    <a class="dl" href="${src}" download>⬇ MP3 내려받기</a>`;
+  el.appendChild(d);
+}
+</script>
+</body>
+</html>
